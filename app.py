@@ -12,7 +12,7 @@ llm_predictor = LLMPredictor(llm=llm)
 
 service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor)
 
-# index = GPTVectorStoreIndex.load_from_disk('index_news.json', service_context=service_context)
+#index = GPTVectorStoreIndex.load_from_disk('index_news.json', service_context=service_context)
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
 index = load_index_from_storage(storage_context)
 query_engine = index.as_query_engine()
