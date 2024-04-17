@@ -1,21 +1,29 @@
-import os, config
-from llama_index import GPTVectorStoreIndex, StorageContext, load_index_from_storage
+import os, config, json
+from llama_index.core import Settings, VectorStoreIndex, StorageContext, load_index_from_storage
 os.environ['OPENAI_API_KEY'] = config.OPENAI_API_KEY
 
 import streamlit as st
-from llama_index import ServiceContext, LLMPredictor
-from langchain.llms import OpenAI
+from llama_index.core import ServiceContext
+from langchain.llms.openai import OpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding
 
-llm = OpenAI(model_name='gpt-4', max_tokens=6000)
+Settings.llm = OpenAI(model_name='gpt-4', max_tokens=6000)
+Settings.embed_model = OpenAIEmbedding(model='text-embedding-3-small')
+service_context = ServiceContext.from_defaults(llm=Settings.llm)
 
-llm_predictor = LLMPredictor(llm=llm)
+# Load the index from a JSON file (you must define this function)
+def load_index_from_json(file_path, service_context):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    index = VectorStoreIndex(data, service_context)
+    return index
 
-service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor)
+# Replace load_from_disk with the new JSON loading approach
+index = load_index_from_json('index_news.json', service_context=service_context)
 
-#index = GPTVectorStoreIndex.load_from_disk('index_news.json', service_context=service_context)
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
 index = load_index_from_storage(storage_context)
-query_engine = index.as_query_engine()
+query_engine = index.as_query_engine(llm=Settings.llm)
 
 st.title('Financial Analyst')
 

@@ -1,5 +1,5 @@
 import os, config
-from llama_index import StorageContext, load_index_from_storage
+from llama_index.core import StorageContext, load_index_from_storage
 
 os.environ['OPENAI_API_KEY'] = config.OPENAI_API_KEY
 
