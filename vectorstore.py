@@ -58,7 +58,8 @@ if not articles_data:
     print("No articles data fetched. Exiting.")
     exit()
 else:
-    print("ARTICLES DATA: ",articles_data[0])
+    print("DONE fetching")
+    #print("ARTICLES DATA: ",articles_data[0])
 
 
 # Prepare the documents for embedding
@@ -67,14 +68,14 @@ for article in articles_data:
     combined_content = article['date'] + "    " + article['headline'] + "    ".join(article['content'])
     docs.append(Document(page_content=combined_content))
 
-print("DOCS: ",docs[0])
+# print("DOCS: ",docs[0])
 
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
     chunk_size=250, chunk_overlap=0
 )
 doc_splits = text_splitter.split_documents(docs)
 
-print("DOCS SPLITS: ", doc_splits[0])
+# print("DOCS SPLITS: ", doc_splits[0])
 
 # Initialize embeddings
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", chunk_size=200, openai_api_key=OPENAI_API_KEY)
@@ -93,7 +94,7 @@ vectorstore = PineconeVectorStore(index_name=index_name, embedding=embeddings)
 vectorstore.add_documents(documents=doc_splits)
 
 retriever = vectorstore.as_retriever()
-print(retriever)
+# print(retriever)
 
 with open(file_path, 'w', encoding='utf-8') as file:    
     pass
