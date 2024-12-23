@@ -15,6 +15,9 @@ scheduledtask.bat
 # Articles directory
 articles/
 
+# chainlit file and app
+chainlitreference.py
+
 # Distribution / packaging
 .Python
 build/
