@@ -51,7 +51,7 @@ vectorstore.add_documents(documents=doc_splits)
 
 - **openai**
 - **streamlit**
-- **langchain**: installed via pip when you install requirements.txt file
+- **langchain & pinecone**: installed via pip when you install requirements.txt file
 
 ## Contributing
 Contributions are welcome! Please open an issue to discuss your proposed changes before submitting a pull request. Ensure that all new code is properly tested and documented.
