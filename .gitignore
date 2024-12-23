@@ -6,6 +6,17 @@ __pycache__/
 # C extensions
 *.so
 
+/config.env
+config.env
+/__pycache__/
+__pycache__/config
+/scheduledtask.bat
+scheduledtask.bat
+/articles/
+/articles
+articles/
+articles
+
 # Distribution / packaging
 .Python
 build/
