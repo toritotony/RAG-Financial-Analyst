@@ -12,8 +12,9 @@ RAG Analyst is a Python-based application designed to automate the collection an
 
 Clone the repository and install the required dependencies listed in `requirements.txt` using pip.
 
-```bash
+```
 pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -31,18 +32,20 @@ pip install -r requirements.txt
 ## Example Scripts
 
 ### Data Collection ('webscrape.py')
-```python
+```
 headers = {'User-Agent': 'Mozilla/5.0'}
 url = "https://www.investing.com/news/"
 webpage = requests.get(url, headers=headers)
 trav = BeautifulSoup(webpage.content, "html.parser")
 articles = trav.find_all('article', {'data-test': 'article-item'})
+```
 
 ### Data Storage ('vectorstore.py')
-```python
+```
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=250, chunk_overlap=0)
 embeddings = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key=OPENAI_API_KEY)
 vectorstore.add_documents(documents=doc_splits)
+```
 
 ## Dependencies
 
