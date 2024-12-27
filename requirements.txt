@@ -3,3 +3,5 @@ streamlit
 langchain
 pinecone
 python-dotenv
+langchain_pinecone
+langchain_core
