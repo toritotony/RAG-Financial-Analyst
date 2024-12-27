@@ -10,13 +10,13 @@ from langchain.chat_models import ChatOpenAI
 from langchain_core.stores import InMemoryByteStore
 
 # Load environment variables from config.env
-load_dotenv("C:\\Users\\wolfe\\OneDrive\\Desktop\\stock-analyst-tool-llamaindex\\config.env")
+#load_dotenv("C:\\Users\\wolfe\\OneDrive\\Desktop\\stock-analyst-tool-llamaindex\\config.env")
 
 # Access API keys and Pinecone configuration
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_API_ENV = os.getenv("PINECONE_ENVIRONMENT")
-PINECONE_INDEX = os.getenv("PINECONE_INDEX")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
+PINECONE_API_ENV = st.secrets["PINECONE_ENVIRONMENT"]
+PINECONE_INDEX = st.secrets["PINECONE_INDEX"]
 
 # Initialize Pinecone instance
 pc = pinecone.Pinecone(api_key=PINECONE_API_KEY, environment=PINECONE_API_ENV)
