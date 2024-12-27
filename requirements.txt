@@ -1,5 +1,5 @@
 openai==1.16.2
-streamlit==1.33.0
+streamlit
 langchain==0.3.13
 pinecone==4.0.0
 python-dotenv==1.0.1
