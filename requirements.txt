@@ -1,10 +1,6 @@
 openai
 streamlit
 langchain
+pinecone-client
 pinecone
 python-dotenv
-langchain_pinecone
-langchain_core
-langchain_community
-langchain_openai
-pinecone_notebooks
