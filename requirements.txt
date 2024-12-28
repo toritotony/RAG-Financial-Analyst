@@ -3,8 +3,8 @@ streamlit
 langchain
 pinecone
 python-dotenv
-langchain-pinecone
+langchain_pinecone
 langchain_core
 langchain_community
-langchain-openai
-pinecone-notebooks
+langchain_openai
+pinecone_notebooks
