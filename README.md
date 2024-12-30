@@ -2,6 +2,8 @@
 
 RAG Analyst is a Python-based application designed to automate the collection and analysis of financial data. It leverages advanced web scraping and machine learning techniques to generate insightful reports. These reports include asset outlooks and comparative analyses, integrating both qualitative and quantitative data sourced from [Investing.com](https://www.investing.com). When certain data is unavailable, the tool adapts to provide the most accurate assessment possible based on existing information.
 
+If you'd simply like to use the public version available, reach out for access, and if you already have access, the link is here [RAG Finance App](https://rag-financial-analyst.streamlit.app)
+
 ## Features
 - **Automated Data Collection**: Scheduled scripts scrape price changes and financial news articles.
 - **Vector Database Integration**: Stores processed data in a vector database for efficient querying and retrieval.
@@ -10,11 +12,7 @@ RAG Analyst is a Python-based application designed to automate the collection an
 
 ## Installation
 
-Clone the repository and install the required dependencies listed in `requirements.txt` using pip.
-
-```
-pip install -r requirements.txt
-```
+Clone the repository available here [RAG Finance App Repository](https://github.com/toritotony/RAG-Financial-Analyst).
 
 ## Usage
 
@@ -22,12 +20,14 @@ pip install -r requirements.txt
    - `OPENAI_API_KEY`
    - `PINECONE_API_KEY`
    - `PINECONE_API_ENV`
+   - `PINECONE_INDEX`
 
-2. Run the `scheduledtask.bat` file to execute the pipeline:
+2. Use your Task Scheduler `scheduledtask.bat` file to execute the pipeline:
+   - Reinstalls packages and libaries from `requirements.txt`
    - Collect articles and price changes using the `webscrape.py` script.
    - Process and store data using the `vectorstore.py` script.
 
-3. Reports will be generated based on available data and stored in the vector database.
+3. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
 
 ## Example Scripts
 
@@ -54,7 +54,7 @@ vectorstore.add_documents(documents=doc_splits)
 - **langchain & pinecone**: installed via pip when you install requirements.txt file
 
 ## Contributing
-Contributions are welcome! Please open an issue to discuss your proposed changes before submitting a pull request. Ensure that all new code is properly tested and documented.
+Contributions and feedback are welcome! Please open an issue to discuss your proposed changes before submitting a pull request. Ensure that all new code is properly tested and documented.
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/license/mit)
