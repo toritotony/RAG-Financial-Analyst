@@ -16,20 +16,22 @@ Clone the repository available here [RAG Finance App Repository](https://github.
 
 ## Usage
 
-1. Run `pip install -r requirements.txt` from the directory where your `requirements.txt` file is located.
+1. Create a virtual environment to isolate the packages being installed in Step 2.
 
-2. Ensure the following environment variables are configured in a `config.env` file:
+2. Run `pip install -r requirements.txt` from the directory where your `requirements.txt` file is located.
+
+3. Ensure the following environment variables are configured in a `config.env` file:
    - `OPENAI_API_KEY`
    - `PINECONE_API_KEY`
    - `PINECONE_API_ENV`
    - `PINECONE_INDEX`
 
-3. Use your Task Scheduler and personalize the paths for your `example_scheduledtask.bat`, `example_webscrape.py`, `example_vectorstore.py` file (as well as renaming them to remove the 'example_' prefix) before automating the pipeline flow:
+4. Use your Task Scheduler and personalize the paths for your `example_scheduledtask.bat`, `example_webscrape.py`, `example_vectorstore.py` file (as well as renaming them to remove the 'example_' prefix) before automating the pipeline flow:
    - Reinstalls packages and libaries necessary for `webscrape.py` and `vectorstore.py`
    - Collect articles and price changes using the `webscrape.py` script.
    - Process and store data using the `vectorstore.py` script.
 
-4. After adding your `config.env` file path into the `example_app.py` file and renaming it to `app.py`, run `streamlit run app.py` from your virtual environment. This will output a local URL for you to visit the application. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
+5. After adding your `config.env` file path into the `example_app.py` file and renaming it to `app.py`, run `streamlit run app.py` from your virtual environment. This will output a local URL for you to visit the application. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
 
 ## Example Scripts
 
