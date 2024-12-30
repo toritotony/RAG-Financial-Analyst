@@ -31,7 +31,7 @@ Clone the repository available here [RAG Finance App Repository](https://github.
    - Collect articles and price changes using the `webscrape.py` script.
    - Process and store data using the `vectorstore.py` script.
 
-5. After adding your `config.env` file path into the `example_app.py` file and renaming it to `app.py`, run `streamlit run app.py` from your virtual environment. This will output a local URL for you to visit the application. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
+5. After adding your `config.env` file path into the `app.py` file and renaming it to `app.py`, run `streamlit run app.py` or deploy to streamlit (after adding the secrets to the streamlit app) from your virtual environment. This will output a local URL for you to visit the application. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
 
 ## Example Scripts
 
