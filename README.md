@@ -16,18 +16,20 @@ Clone the repository available here [RAG Finance App Repository](https://github.
 
 ## Usage
 
-1. Ensure the following environment variables are configured in a `config.env` file:
+1. Run `pip install -r requirements.txt` from the directory where your `requirements.txt` file is located.
+
+2. Ensure the following environment variables are configured in a `config.env` file:
    - `OPENAI_API_KEY`
    - `PINECONE_API_KEY`
    - `PINECONE_API_ENV`
    - `PINECONE_INDEX`
 
-2. Use your Task Scheduler and personalize your `example_scheduledtask.bat` file before automating the pipeline flow:
+3. Use your Task Scheduler and personalize your `example_scheduledtask.bat` file before automating the pipeline flow:
    - Reinstalls packages and libaries necessary for `webscrape.py` and `vectorstore.py`
    - Collect articles and price changes using the `webscrape.py` script.
    - Process and store data using the `vectorstore.py` script.
 
-3. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
+4. Run `streamlit run app.py` from your virtual environment. This will output a local URL for you to visit the application. Reports will be generated based on available data and stored in the vector database. Certain reports are available now, with limited data on particular assets and stocks.
 
 ## Example Scripts
 
