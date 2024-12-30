@@ -15,6 +15,7 @@ scheduledtask.bat
 # Python files in use
 vectorstore.py
 webscrape.py
+app.py
 
 # Articles directory
 articles/
