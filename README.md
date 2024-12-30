@@ -24,7 +24,7 @@ Clone the repository available here [RAG Finance App Repository](https://github.
    - `PINECONE_API_ENV`
    - `PINECONE_INDEX`
 
-3. Use your Task Scheduler and personalize your `example_scheduledtask.bat` file before automating the pipeline flow:
+3. Use your Task Scheduler and personalize the paths for your `example_scheduledtask.bat`, `example_webscrape.py`, `example_vectorstore.py` file (as well as renaming them to remove the 'example_' prefix) before automating the pipeline flow:
    - Reinstalls packages and libaries necessary for `webscrape.py` and `vectorstore.py`
    - Collect articles and price changes using the `webscrape.py` script.
    - Process and store data using the `vectorstore.py` script.

@@ -12,6 +12,10 @@ config.env
 # Scheduled tasks
 scheduledtask.bat
 
+# Python files in use
+vectorstore.py
+webscrape.py
+
 # Articles directory
 articles/
 
