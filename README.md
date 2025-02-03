@@ -41,7 +41,7 @@ headers = {'User-Agent': 'Mozilla/5.0'}
 url = "https://www.investing.com/news/"
 webpage = requests.get(url, headers=headers)
 trav = BeautifulSoup(webpage.content, "html.parser")
-articles = trav.find_all('article', {'data-test': 'article-item'})
+articles = trav.find_all('div', {'data-test': re.compile('homepage-news-list-item')})
 ```
 
 ### Data Storage ('vectorstore.py')
