@@ -7,3 +7,6 @@ pinecone-client
 pinecone
 python-dotenv
 tiktoken
+bs4
+requests
+regex
